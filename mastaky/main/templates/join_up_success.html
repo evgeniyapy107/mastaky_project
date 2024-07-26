@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<nav class="navigation">
+            <div class="container">
+                <ul>
+                    <li class="home"><a href="{% url 'main_index' %}"><div class="home-image"><i class="fa fa-home"></i></div></a></li>
+                    <li class="tel"><a href="#">+375 29 8139716</a></li>
+                </ul>
+            </div>
+</nav>
+<main class="main">
+    <div class="container">
+        <div class="join_up_success">
+           <h1>Спасибо за вашу заявку!</h1>
+            <p>Мы свяжемся с вами для уточнения деталей.</p>
+        </div>
+    </div>
+</main>
+{% endblock %}

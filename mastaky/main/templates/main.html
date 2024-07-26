@@ -1,0 +1,356 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<nav class="navigation">
+            <div class="container">
+                <ul>
+                    <li class="home"><a href="{% url 'main_index' %}"><div class="home-image"><i class="fa fa-home"></i></div></a></li>
+                    <li><a href="#pra_nas">пра нас</a></li>
+                    <li><a href="#kursy">курсы</a></li>
+                    <li><a href="#kartiny">карціны</a></li>
+                    <li><a href="#">магазін</a></li>
+                    <li><a href="#vopros">FAQ</a></li>
+                    <li><a href="#kontakty">кантакты</a></li>
+                    <li class="tel"><a href="#">+375 29 8139716</a></li>
+                </ul>
+            </div>
+</nav>
+<main class="main">
+            <div class="container">
+                <div class="promo">
+                    <img class="promo_image" src="{% static 'images/promo.JPG' %}" alt="изображение рекламного блока">
+                    <div class="promo_text">
+                        <p>Малюем беларусь разам</p>
+                        <a href="{% url 'join_up_form' %}"><button type="button" class="promo_button">Запісацца на заняток</button></a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container">
+                <div class="info" id="pra_nas">
+                    <h2>ТУЧЫНСКІЯ МАСТАКІ - ГЭТА НЕЗВЫЧАЙНАЯ МАСТАЦКАЯ СТУДЫЯ</h2>
+                    <ul>
+                        <li>Мы аказваем падтрымку мастакам на ўсіх этапах іх развіцця.</li>
+                        <li>Распавядаем не толькі як намаляваць свой першы шэдэвр, але і як пасля яго прадаць</li>
+                        <li>Наша цэль не толькі как вы прыгожа малявалі, але і знаеміліся з беларускай культурай і прасовувалі яе далей праз творчасць</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="about">
+                    <img src="{% static 'images/section_about.PNG' %}" alt="фоновая картинка">
+                </div>
+            </div>
+            <div class="container">
+                <div class="column-4">
+                    <div class="title">
+                        <h2>Запісвайцеся на пробны занятак</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <img class="col-image" src="{% static 'images/col-image-1.png' %}" alt="изображение колонки 1">
+                            <h2>Месца</h2>
+                            <p>Атмасферная студыя ў невялікім старым будынку. Даступная паркоўка, шмат зеляніны і святла</p>
+                        </div>
+                        <div class="col">
+                            <img class="col-image" src="{% static 'images/col-image-2.png' %}" alt="изображение колонки 2">
+                            <h2>Тэма</h2>
+                            <p>Звычайна мы пачынаем з графікі ці скетчынга. Але ніхто не перашкаджае вам выбраць любую іншую карціну</p>
+                        </div>
+                        <div class="col">
+                            <img class="col-image" src="{% static 'images/col-image-3.png' %}" alt="изображение колонки 3">
+                            <h2>матэрыялы</h2>
+                            <p>З сабой прыносіць нічога не трэба. Усе матэрыялы прадастаўляюцца на месцы.</p>
+                        </div>
+                        <div class="col">
+                            <img class="col-image" src="{% static 'images/col-image-4.png' %}" alt="изображение колонки 4">
+                            <h2>вынік</h2>
+                            <p>Ад нас вы сыдзеце з гатовай карцінай, новымі ведамі, прыемнымі эмоцыямі і знаёмствамі</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="form">
+                    <h2>Запішыцесць на выпрабавальны занятак</h2>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="field">
+                            <input type="text" name="firstname" placeholder="Імя">
+                        </div>
+                        <div class="field">
+                            <input type="email" name="email" placeholder="email">
+                        </div>
+                        <div class="field">
+                            <input type="tel" name="tel" placeholder="телефон">
+                        </div>
+                        <div class="form_button">
+                            <a href="{% url 'join_up_success' %}"><button class="send" type="submit">Запісацца</button></a>
+                        </div>
+                    </form>
+                    <br>
+                    <p>* Націскаючы на ​​кнопку, вы даяце згоду на апрацоўку сваіх персанальных дадзеных</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="teachers">
+                    <div class="title-center">
+                        <h2>Тучынскiя Мастакi - это</h2>
+                    </div>
+                    <div class="teachers_item">
+                        <p>Ірына Міхайлаўна Дубянецкая (нар. 23 мая 1964, Мінск) — доктар багаслоўя. Дачка выдаўца і пісьменніка Міхася Дубянецкага</p>
+                    </div>
+                    <div class="teachers_item">
+                        <img class="teachers_image" alt="фото учителя" src="{% static 'images/cat.jpeg' %}">
+                    </div>
+
+                    <div class="teachers_item">
+                        <img class="teachers_image" alt="фото учителя" src="{% static 'images/maxim.png' %}">
+                    </div>
+                    <div class="teachers_item">
+                        <p>Максим Храповицкий- художник, преподаватель Санкт-петербургской школы телевидения. Окончил Белорусский Государственный Университет, учился в художественной школе</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="section" id="kursy">
+                    <div class="rhombus">
+                        <h2>Або падбярыце сабе курс па адным з наступных напрамкаў:</h2>
+                    </div>
+                    {% for item in educations_item %}
+                    <div class="section_item">
+                        <img class="item_image" alt="изображение курса" src="{{ item.image.url }}">
+                        <a class="link" href="{%url 'education_detail' item.pk %}"><h2>{{item.title}}</h2></a>
+                        <!--<img class="item_image" alt="академическая живопись" src="images/section-1.png">
+                        <a class="link" href="#"><h2>акадэмічны малюнак</h2></a>-->
+                    </div>
+                    {% endfor %}
+                    <!--<div class="section_item">
+                        <img class="item_image" alt="скетчинг" src="images/section-2.png">
+                        <a class="link" href="#"><h2>Скетчынг</h2></a>
+                    </div>
+                    <div class="section_item">
+                        <img class="item_image" alt="масло" src="images/section-3.png">
+                        <a class="link" href="#"><h2>жывапіс алеем</h2></a>
+                    </div>
+                    <div class="section_item">
+                        <img class="item_image" alt="procreate" src="images/section-4.png">
+                        <a class="link" href="#"><h2>жывапіс у procreate</h2></a>
+                    </div>-->
+                </div>
+            </div>
+            <div class="container">
+                <div class="mk">
+                    <div class="mk_title">
+                        <h2>Курс занадта доўга? Выбірайце мк</h2>
+                    </div>
+                    {% for mk in mk_item %}
+                    <div class="mk_item">
+                        <img class="item_image" alt="изображение мастер-класса" src="{{ mk.image.url }}">
+                        <a class="link" href="{% url 'mk_detail' mk.pk %}"><h2>{{ mk.title }}</h2></a>
+                    </div>
+                    {% endfor %}
+                    <!--<div class="mk_item">
+                        <img class="item_image" alt="Сирень" src="images/mk_image-2.png">
+                        <a class="link" href="#"><h2>бэз</h2></a>
+                    </div>
+                    <div class="mk_item">
+                        <img class="item_image" alt="Грибочки" src="images/mk_image-3.png">
+                        <a class="link" href="#"><h2>Грибочки</h2></a>
+                    </div>-->
+                    <div class="mk_item">
+                        <h2>Частка майстар-класаў даступная не толькі ў жывую, але і анлайн. Напішыце нам, каб даведацца падрабязнасці</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="media">
+                    <h3>Падпісвайцеся на нашыя сацсеткі, каб першымі даведвацца пра новыя майстар-класы і даступныя курсы.</h3><br>
+                    <a href="https://www.instagram.com/mastaki_by?igsh=amd3eWd0azAwMzZm"><img class="inst" src="{% static 'images/instagram.png' %}" alt="instagram"></a>
+                    <p>mastaki_by</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="mk" id="kartiny">
+                    <div class="mk_title">
+                        <h2>таксама ў наяўнасці вялікая колькасць гатовых работ на беларускую тэматыку</h2>
+                        <a href="{% url 'painting_index' %}">список картин</a>
+                    </div>
+                    <!--ссылка на магазин -->
+
+                    <!--<div class="mk_item">
+                        <img class="item_image" alt="Лиса" src="images/mk_image-1.png">
+                        <h2>Лиса</h2>
+                    </div>
+                    <div class="mk_item">
+                        <img class="item_image" alt="Сирень" src="images/mk_image-2.png">
+                        <h2>бэз</h2>
+                    </div>
+                    <div class="mk_item">
+                        <img class="item_image" alt="Грибочки" src="images/mk_image-3.png">
+                        <h2>Грибочки</h2>
+                    </div>-->
+                    <div class="mk_item">
+                        <h2>Калі вы не наш і тую самую карціну для сябе, не хвалюйцеся, у нас заўсёды можна замовіць індывідуальную карціну</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="faq" id="vopros">
+                    <h2>FAQ</h2>
+                    <button class="accordion">Ці можна наведваць вашыя заняткі, калі ні разу не маляваў?</button>
+                    <div class="panel">
+                        <p>Зразумела! Моцны бок нашай студыі - гэтае мяккае апусканне студэнта ў мір мастацтва, без перагінаў і лішняга акадэмізму. І мы ганарымся гісторыямі нашых вучняў, якія ўпершыню узяўшы ў рукі пэндзаль менавіта ў нас дасягаюць значных вынікаў!</p>
+                    </div>
+                    <button class="accordion">Як праходзяць заняткі ў студыі?</button>
+                    <div class="panel">
+                        <p>Студыя Тучынскiя мастакi робіць акцэнт не толькі на навучанні,
+                        але і на зносінах студэнтаў паміж сабой,
+                        новых знаёмствах і сяброўскай атмасферы на занятках.
+                        Таму мы працуем у малых групах да 5 чалавек,
+                        дзе адначасова працуюць студэнты рознага ўзросту і ўзроўню падрыхтоўкі.</p>
+                    </div>
+                    <button class="accordion">Ці трэба прыносіць з сабой нейкія матэрыялы?</button>
+                    <div class="panel">
+                        <p>Калі вы ўжо даўно малюеце і хацелі б мець на студыі набор любімых інструментаў - бярыце іх з сабой. Ва ўсіх астатніх выпадках,
+                        студыя прадаставіць увесь набор матэрыялаў на месцы. Больш за тое, з усёй разнастайнасці
+                        мастацкіх інструментаў мы ўжо адабралі і пратэставалі самыя зручныя і ўніверсальныя і гатовы іх прадаставіць.
+                        Адзінае, што мы не зможам падаць па чынніку іх кошту - гэта палотны вялікіх памераў.
+                        Але нават тут мы пайшлі насустрач і ў нас заўсёды ёсць нейкая колькасць палотнаў, якія можна набыць на месцы.</p>
+                    </div>
+                    <button class="accordion">Колькі каштуюць занятак?</button>
+                    <div class="panel">
+                        <p>Мы заўсёды прытрымліваліся пазіцыі "чым прасцей, тым лепш", таму ў большасці выпадкаў ваша навучанне
+                        на студыі будзе каштаваць 15 рублёў за 60 хвілін.
+                        Проста лічыць, зручна планаваць!</p>
+                    </div>
+                    <button class="accordion">Як доўга доўжыцца занятак?</button>
+                    <div class="panel">
+                        <p>Заняткі звычайна доўжацца 2 гадзіны - 120 хвілін. Як паказала практыка, гэты аптымальны час для пачынаючага мастака, каб паспець уліцца ў працоўны працэс, з задавальненнем памаляваць і паспець адкласці пэндзаль да наступлення стомленасці. Але мы, натуральна, вас не абмяжоўваем у творчых парывах: жадаеце маляваць увесь дзень - калі ласка, дашлі на 2 гадзіны,
+                        але захапіліся і жадаеце застацца яшчэ на гадзіну - зразумела</p>
+                    </div>
+                    <button class="accordion">Дзе праходзяць заняткі?</button>
+                    <div class="panel">
+                        <p>Для таго, каб стварыць паўнавартасную творчую атмасферу,
+                        мы арандавалі памяшканне ў старым будынку на вул. Харкаўская 75. Тут амаль няма офісаў, людзей і ўстаноў: толькі студыя, зялёная зона і поўная свабода творчасці.
+                        Ах так, яшчэ вольная паркоўка ў самога ўваходу</p>
+                    </div>
+                    <button class="accordion">У якіх тэхніках малююць у студыі?</button>
+                    <div class="panel">
+                        <p>Асноўная тэхніка - гэта алей. Вялікія палотны, шмат фарбы, пах разбавіцеля. Менавіта ў гэтай тэхніцы складаней за ўсё тварыць у сябе дома і неверагодна зручна на студыі.
+                        Але для навучэнцаў даступныя і ўсе іншыя матэрыялы:
+                        ад графікі вуглём, алоўкам і соусам да жывапісу акрылам, гуашшу і тэмперай</p>
+                    </div>
+                    <script>
+                        var acc = document.getElementsByClassName("accordion");
+                        var i;
+
+                        for (i = 0; i < acc.length; i++) {
+                          acc[i].addEventListener("click", function() {
+                            this.classList.toggle("active");
+                            var panel = this.nextElementSibling;
+                            if (panel.style.maxHeight){
+                              panel.style.maxHeight = null;
+                            } else {
+                              panel.style.maxHeight = panel.scrollHeight + "px";
+                            }
+                          });
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="container">
+                <div class="works">
+                    <div class="works_title">
+                        <h2>Яшчэ сумняваецеся? Паглядзіце на працы нашых студэнтаў!</h2>
+                    </div>
+                    <div class="scroll_galery">
+                        {% for work in all_student_works %}
+                        <div class="image_container">
+                            <img class="works_image" alt="photo galery" src="{{ work.image.url }}">
+                            <p class="image_caption">{{ work.title }}</p>
+                        </div>
+                        {% endfor %}
+                        <!--<div class="image_container">
+                            <img class="works_image" alt="photo galery" src="/images/works.jpeg">
+                            <p class="image_caption">подпись к картинке</p>
+                        </div>
+                        <div class="image_container">
+                            <img class="works_image" alt="photo galery" src="/images/works.jpeg">
+                            <p class="image_caption">подпись к картинке</p>
+                        </div>
+                        <div class="image_container">
+                            <img class="works_image" alt="photo galery" src="/images/works.jpeg">
+                            <p class="image_caption">подпись к картинке</p>
+                        </div>
+                        <div class="image_container">
+                            <img class="works_image" alt="photo galery" src="/images/works.jpeg">
+                            <p class="image_caption">подпись к картинке</p>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="reviews">
+                    <div class="title-review"><h2>Отзывы</h2></div>
+                    <div class="review-carousel">
+                        {% for review in all_reviews %}
+                        <div class="review">
+                            <p>{{ review.review_text }}</p>
+                            <p>{{ review.author }}</p>
+                        </div>
+                        {% endfor %}
+                        <!--<div class="review">отзыв 2</div>
+                        <div class="review">отзыв 3</div>
+                        <div class="review">отзыв 1</div>
+                        <div class="review">отзыв 1</div>-->
+                    </div>
+                    <button class="prev-button">пред</button>
+                    <button class="next-button">далее</button>
+                    <script>
+                        const reviews = document.querySelectorAll('.review');
+                        const prevButton = document.querySelector('.prev-button');
+                        const nextButton = document.querySelector('.next-button');
+                        let currentIndex = 0;
+
+                        function showReview(index) {
+                            reviews.forEach((review, i) => {
+                                review.style.display = i === index ? 'block' : 'none';
+                            });
+                        }
+
+                        function showNextReview() {
+                            currentIndex = (currentIndex + 1) % reviews.length;
+                            showReview(currentIndex);
+                        }
+
+                        function showPrevReview() {
+                            currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+                            showReview(currentIndex);
+                        }
+
+                        prevButton.addEventListener('click', showPrevReview);
+                        nextButton.addEventListener('click', showNextReview);
+
+                        // Показать первый отзыв при загрузке страницы
+                        showReview(currentIndex);
+                    </script>
+                </div>
+            </div>
+            <div class="container">
+                <div class="contacts" id="kontakty">
+                    <div class="contacts_item">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2351.0243449459813!2d27.4987202761644!3d53.895771233473134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbdaab4fbce59f%3A0xe59742dc241a4537!2z0YPQuy4g0KXQsNGA0YzQutC-0LLRgdC60LDRjyA3NSwg0JzQuNC90YHQuiwg0JzQuNC90YHQutCw0Y8g0L7QsdC70LDRgdGC0YwgMjIwMTE2!5e0!3m2!1sru!2sby!4v1711629851646!5m2!1sru!2sby" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="contacts_item">
+                        <h2>Мы знаходзімся:</h2>
+                        <p>Ул. Харьковская, 75</p>
+                        <p>1 подьезд, 2 этаж, пом. 4</p>
+                        <p>+375 29 813 97 16</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+{% endblock %}

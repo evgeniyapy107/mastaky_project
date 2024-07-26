@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="main">
+    <div class="container">
+        <div class="paintings">
+            <h1>Картины</h1>
+            {% for item in all_paintings %} # проверить другие циклы на див
+            <div class="paintings_item">
+                <img src="{{item.image.url}}" alt="photo painting">
+                <a href="{% url 'painting_detail' item.id %}">{{ item.title }}</a>
+                <h1>{{item.price}}</h1>
+                <h2>{{item.artist}}</h2>
+            </div>
+            {%endfor%}
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    <title>mastaky</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'Sunday Regular';
+    src: local('Sunday Regular'), url('/static/fonts/sunday_regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Sunday Regular', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+}
+h2 {
+    line-height: 40px;
+}
+
+.container {
+    width: 80%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header,
+.navigation,
+.main,
+.footer {
+    padding: 10px;
+}
+.header {
+    background-color: gainsboro;
+}
+.navigation {
+    background-color: #FFEFD5;
+}
+.navigation ul {
+    list-style: none;
+}
+.navigation li {
+    display: inline-block;
+    margin-right: 16px;
+
+    font-size: 20px;
+}
+.navigation a {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    padding: 10px 20px;
+}
+.navigation a:hover {
+    background-color: gold;
+}
+.main {
+    background-color: bisque;
+}
+/*.main .promo,
+.main .info,
+.main .about,
+.main .col,
+.main .form,
+.main .teachers,
+.main .section,
+.main .mk,
+.main .media,
+.main .works,
+.main .back,
+.main .contacts {
+    margin-bottom: 20px;
+}*/
+.main .container > div:first-child {
+    margin-bottom: 12px;
+}
+.main .promo {
+    position: relative;
+}
+.main .promo_image {
+    width: 100%;
+    height: auto;
+}
+/*через @media указать стили к тексту для меньшего экрана?*/
+.main .promo_text {
+    position: absolute;
+    bottom: 85px;
+    right: 35px;
+    font-size: 30px;
+
+}
+.main .promo_button {
+    border: none;
+    border-radius: 15px;
+    font-family: 'Sunday Regular';
+    font-size: 20px;
+    width: 280px;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #ffd900;
+    cursor: pointer;
+
+    /*transform*/
+}
+.main .promo_button:hover {
+    background-color: rgb(255, 239, 151);
+
+}
+.main .join_up_form,
+.main .join_up_success {
+    background-color: white;
+    padding: 45px;
+}
+.main .join_up_form label {
+    font-size: 16px;
+}
+.main .join_up_form input[type="text"],
+.main .join_up_form input[type="tel"],
+.main .join_up_form textarea {
+    padding: 5px;
+    vertical-align: bottom;
+    border-style: none none solid none;
+}
+
+.main .info {
+    background-color: gold;
+    padding: 45px;
+}
+.main .info ul {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+}
+.main .info h2 {
+    margin-bottom: 24px;
+    text-align: center;
+}
+.main .about img {
+    height: auto;
+    width: 100%;
+
+}
+.main .column-4 {
+    background-color: white;
+    padding: 45px;
+}
+.main .column-4 .title {
+    background-color: burlywood;
+    padding: 40px;
+    border-radius: 20px;
+    border: dotted saddlebrown 5px;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+.main .row {
+    margin-top: 20px;
+    text-align: center;
+}
+.main .col {
+    display: inline-block;
+    width: 220px;
+    vertical-align: top;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.main .col h2 {
+    margin-bottom: 20px;
+}
+.main .col-image {
+    width: 220px;
+}
+
+
+/*@media screen and (max-width: 600px) {
+    .col {
+        width: 100%;
+    }
+}*/
+.main .form {
+    background-color: white;
+    padding: 45px;
+}
+.main .form h2 {
+    margin-bottom: 30px;
+}
+.main .field,
+.main .form_button {
+    display: inline-block;
+    vertical-align: middle;
+}
+/*.main .form_button {
+    margin-left: 50px;
+}*/
+.main .field {
+    margin-right: 50px;
+    font-size: 24px;
+    color: rgb(201, 167, 122);
+}
+.main .send {
+    border: none;
+    background-color: #faef92;
+    font-size: 24px;
+    font-family: 'Sunday Regular', Arial, Helvetica, sans-serif;
+    padding: 18px 14px;
+    cursor: pointer;
+}
+.main .send:hover {
+    background-color: #FFFFE0;
+}
+.main .form input::placeholder {
+    color: rgb(201, 167, 122);
+    font-size: 24px;
+    font-family: 'Sunday Regular'
+}
+
+.main .form input {
+    border-style: none none solid none;
+    padding: 30px 0px 30px 10px;
+}
+.main .teachers {
+    background-color: white;
+    padding: 45px;
+}
+.main .title-center {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    /*попробовать ко всем заголовкам*/
+}
+.main .teachers_item {
+
+    display: inline-block;
+    width: 23%;
+    /*max-width: 50%;*/
+    text-align: center;
+    overflow: hidden;
+    vertical-align: top;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.main .teachers_item p {
+    font-size: 16px;
+}
+/*media screen добавить*/
+.main .teachers_image {
+    width: 100%;
+    /*border-radius: 50%;*/
+}
+.main .section {
+    background-color: #eeb720b7;
+    /*padding: 45px;*/
+    padding-top: 25px;
+    text-align: center;
+}
+.main .rhombus {
+    background-color: #6eb0b8;
+    width: 50%;
+    padding: 45px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.main .section_item,
+.main .mk_item {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top; /*подумать*/
+    overflow: hidden;
+    margin: 40px;
+    /*border: dotted brown 3px;
+    border-radius: 15px;*/
+    padding: 8px;
+    background-color: rgba(255, 215, 0, 0.55);
+}
+.main .item_image {
+    width: 100%;
+}
+.main .item_image:hover {
+    opacity: 0.7;
+}
+.main .link {
+    color: black;
+    text-decoration: none;
+}
+.main .link:hover {
+    color: #CD853F;
+
+}
+.main .about_education {
+    background-color: white;
+    padding: 45px;
+}
+.ed_image {
+    width: 30%;
+    display: inline-block;
+    overflow: hidden;
+    padding: 10px;
+    vertical-align: top;
+
+}
+.main .about_education img {
+    width: 100%;
+}
+.main .mk {
+    background-color: #CD853F;
+    overflow: hidden;
+    text-align: center;
+}
+.main .mk_title {
+    background-color: #6eb0b8;
+    width: 50%;
+    padding: 45px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.main .about_mk img {
+    width: 100%;
+}
+.main .media {
+    background-color: white;
+    padding: 45px;
+}
+.inst {
+    width: 6%;
+}
+.main .media p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main .faq {
+    padding: 45px;
+    background-color: white;
+}
+.main .faq h2 {
+    margin-bottom: 20px;
+}
+.main .faq .panel {
+    font-family: Arial, Helvetica, sans-serif; /*??*/
+
+}
+.main .faq .accordion {
+    background-color: #FFFFE0;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    font-family: 'Sunday Regular';
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+}
+/*.main .faq .accordion:nth-child(odd){
+    background-color: gold;
+
+}*/
+.main .faq .accordion:hover {
+    background-color: #ccc;
+}
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+.panel {
+    font-size: 18px;
+    background-color: white;
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.main .works {
+    padding: 45px;
+    background-color: white;
+}
+.main .works_title {
+    background-color: gold;
+    padding: 40px;
+    width: 60%;
+}
+.main .works h2 {
+    margin-bottom: 20px;
+}
+.main .scroll_galery {
+    overflow-x: scroll;
+    width: 100%;
+    white-space: nowrap;
+    padding: 25px;
+    margin-left: -15px;
+}
+.main .works .image_container {
+    display: inline-block;
+    overflow: hidden;
+    padding: 10px;
+    width: 300px;
+    height: 460px;
+}
+.main .works_image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.main .reviews {
+    background-color: white;
+    padding: 45px;
+}
+.main .title-review {
+    background-color: #6eb0b8;
+    padding: 40px;
+    margin-bottom: 50px;
+    width: 40%;
+}
+.main .review-carousel {
+    border-radius: 25px;
+    /*width: 40%;*/
+    padding: 20px;
+    background-color: #faef92;
+}
+.main .review {
+    border: dotted sienna 3px;
+    border-radius: 10px;
+    width: 40%;
+}
+.main .contacts {
+    background-color: white;
+    padding: 45px;
+    overflow: hidden;
+
+}
+.main .contacts_item {
+    /*display: inline-block;
+    vertical-align: top;*/
+    float: left;
+    margin-right: 30px;
+}
+.main .contacts h2 {
+    margin-bottom: 15px;
+}
+
+.footer {
+    background-color: darkgray;
+    clear: both;
+}
+.footer .footer_box {
+    background-color: gold;
+    padding: 45px;
+    font-size: 14px;
+    text-align: justify;
+}
+.footer_text {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 55%;
+    margin-bottom: 15px;
+}
+.footer .footer_contacts{
+    display: inline-block;
+}
+    </style>
+</head>
+
+<body>
+    <div class="site">
+        <header>
+        </header>
+
+        {% load static %}
+        {% block content %}
+        {% endblock %}
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer_box">
+                    <div class="footer_text">
+                        <p>Малюем беларусь разам</p>
+                    </div>
+                    <div class="footer_contacts">
+                        <p>+375 29 8139716</p>
+                        <p>г. Минск, ул. Харьковская 75</p>
+                        <a href="https://www.instagram.com/mastaki_by?igsh=amd3eWd0azAwMzZm"><img class="inst" src="{% static 'images/instagram.png' %}" alt="instagram"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>

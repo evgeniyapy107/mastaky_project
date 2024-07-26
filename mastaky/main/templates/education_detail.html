@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<nav class="navigation">
+            <div class="container">
+                <ul>
+                    <li class="home"><a href="{% url 'main_index' %}"><div class="home-image"><i class="fa fa-home"></i></div></a></li>
+                    <li class="tel"><a href="#">+375 29 8139716</a></li>
+                </ul>
+            </div>
+</nav>
+<main class="main">
+    <div class="container">
+        <div class="about_education">
+            <h1>{{about.title}}</h1>
+            <p>{{about.description}}</p>
+            <h1>{{about.price}}</h1>
+            <h2>{{about.duration}}</h2>
+            <div class="ed_image">
+                <img src="{{about.image.url}}" alt="photo education">
+            </div>
+            <div class="ed_image">
+                <img src="{{about.image_2.url}}" alt="photo education">
+            </div>
+            <div class="ed_image">
+                <img src="{{about.image_3.url}}" alt="photo education">
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
