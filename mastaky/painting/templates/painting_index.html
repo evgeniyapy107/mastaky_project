@@ -4,12 +4,16 @@
     <div class="container">
         <div class="paintings">
             <h1>Картины</h1>
-            {% for item in all_paintings %} # проверить другие циклы на див
+            {% for item in all_paintings %}
             <div class="paintings_item">
                 <img src="{{item.image.url}}" alt="photo painting">
-                <a href="{% url 'painting_detail' item.id %}">{{ item.title }}</a>
+                <a href="{% url 'painting_detail' painting_id=item.id %}">{{ item.title }}</a>
                 <h1>{{item.price}}</h1>
                 <h2>{{item.artist}}</h2>
+                <form action="{% url 'cart:cart_add' painting_id=item.id %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Добавить в корзину">
+                </form>
             </div>
             {%endfor%}
 

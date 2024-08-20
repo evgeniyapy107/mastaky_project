@@ -1,20 +1,31 @@
 {% extends 'base.html' %}
+
 {% block content %}
 <main class="main">
     <div class="container">
-        <div class="paintings">
-            <h1>Картины</h1>
-            {% for item in all_paintings %} # проверить другие циклы на див
-            <div class="paintings_item">
-                <img src="{{item.image.url}}" alt="photo painting">
-                <a href="{% url 'painting_detail' item.id %}">{{ item.title }}</a>
-                <h1>{{item.price}}</h1>
-                <h2>{{item.artist}}</h2>
-            </div>
-            {%endfor%}
+        <div class="painting-detail">
+            <h1>{{ painting.title }}</h1>
+            <h2>Автор: {{ painting.artist }}</h2>
+            <img src="{{ painting.image.url }}" alt="photo painting">
+            <h3>Цена: {{ painting.price }}</h3>
 
+            <div class="about-painting">
+                <h2>{{ about_painting.title }}</h2>
+                <p>{{ about_painting.description }}</p>
+                <div class="additional-images">
+                    <img src="{{ about_painting.image1.url }}" alt="additional image 1">
+                    <img src="{{ about_painting.image2.url }}" alt="additional image 2">
+                    <img src="{{ about_painting.image3.url }}" alt="additional image 3">
+                    <img src="{{ about_painting.image4.url }}" alt="additional image 4">
+                </div>
+                <h3>Дополнительная цена: {{ about_painting.price }}</h3>
+            </div>
+
+            <form action="{% url 'cart:cart_add' painting_id=painting.id %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Добавить в корзину">
+            </form>
         </div>
     </div>
 </main>
-
 {% endblock %}

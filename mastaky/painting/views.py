@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from . import models
-from django.http import HttpResponse
 
 
 def painting_index(request):
@@ -19,5 +18,5 @@ def painting_detail(request, painting_id):
         'about_painting': about_painting
     }
 
-    return render(request, 'painting_detail.html')
+    return render(request, 'painting_detail.html', context)
 
