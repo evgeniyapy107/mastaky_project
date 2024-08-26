@@ -8,10 +8,11 @@
                     <li class="home"><a href="{% url 'main_index' %}"><div class="home-image"><i class="fa fa-home"></i></div></a></li>
                     <li><a href="#pra_nas">пра нас</a></li>
                     <li><a href="#kursy">курсы</a></li>
-                    <li><a href="#kartiny">карціны</a></li>
+                    <li><a href="{% url 'painting_index' %}">карціны</a></li>
                     <li><a href="#">магазін</a></li>
                     <li><a href="#vopros">FAQ</a></li>
                     <li><a href="#kontakty">кантакты</a></li>
+                    
                     <li class="tel"><a href="#">+375 29 8139716</a></li>
                 </ul>
             </div>
@@ -122,22 +123,10 @@
                     <div class="section_item">
                         <img class="item_image" alt="изображение курса" src="{{ item.image.url }}">
                         <a class="link" href="{%url 'education_detail' item.pk %}"><h2>{{item.title}}</h2></a>
-                        <!--<img class="item_image" alt="академическая живопись" src="images/section-1.png">
-                        <a class="link" href="#"><h2>акадэмічны малюнак</h2></a>-->
+
                     </div>
                     {% endfor %}
-                    <!--<div class="section_item">
-                        <img class="item_image" alt="скетчинг" src="images/section-2.png">
-                        <a class="link" href="#"><h2>Скетчынг</h2></a>
-                    </div>
-                    <div class="section_item">
-                        <img class="item_image" alt="масло" src="images/section-3.png">
-                        <a class="link" href="#"><h2>жывапіс алеем</h2></a>
-                    </div>
-                    <div class="section_item">
-                        <img class="item_image" alt="procreate" src="images/section-4.png">
-                        <a class="link" href="#"><h2>жывапіс у procreate</h2></a>
-                    </div>-->
+
                 </div>
             </div>
             <div class="container">
@@ -151,14 +140,7 @@
                         <a class="link" href="{% url 'mk_detail' mk.pk %}"><h2>{{ mk.title }}</h2></a>
                     </div>
                     {% endfor %}
-                    <!--<div class="mk_item">
-                        <img class="item_image" alt="Сирень" src="images/mk_image-2.png">
-                        <a class="link" href="#"><h2>бэз</h2></a>
-                    </div>
-                    <div class="mk_item">
-                        <img class="item_image" alt="Грибочки" src="images/mk_image-3.png">
-                        <a class="link" href="#"><h2>Грибочки</h2></a>
-                    </div>-->
+
                     <div class="mk_item">
                         <h2>Частка майстар-класаў даступная не толькі ў жывую, але і анлайн. Напішыце нам, каб даведацца падрабязнасці</h2>
                     </div>
@@ -177,20 +159,7 @@
                         <h2>таксама ў наяўнасці вялікая колькасць гатовых работ на беларускую тэматыку</h2>
                         <a href="{% url 'painting_index' %}">список картин</a>
                     </div>
-                    <!--ссылка на магазин -->
 
-                    <!--<div class="mk_item">
-                        <img class="item_image" alt="Лиса" src="images/mk_image-1.png">
-                        <h2>Лиса</h2>
-                    </div>
-                    <div class="mk_item">
-                        <img class="item_image" alt="Сирень" src="images/mk_image-2.png">
-                        <h2>бэз</h2>
-                    </div>
-                    <div class="mk_item">
-                        <img class="item_image" alt="Грибочки" src="images/mk_image-3.png">
-                        <h2>Грибочки</h2>
-                    </div>-->
                     <div class="mk_item">
                         <h2>Калі вы не наш і тую самую карціну для сябе, не хвалюйцеся, у нас заўсёды можна замовіць індывідуальную карціну</h2>
                     </div>
@@ -272,22 +241,7 @@
                             <p class="image_caption">{{ work.title }}</p>
                         </div>
                         {% endfor %}
-                        <!--<div class="image_container">
-                            <img class="works_image" alt="photo galery" src="/images/works.jpeg">
-                            <p class="image_caption">подпись к картинке</p>
-                        </div>
-                        <div class="image_container">
-                            <img class="works_image" alt="photo galery" src="/images/works.jpeg">
-                            <p class="image_caption">подпись к картинке</p>
-                        </div>
-                        <div class="image_container">
-                            <img class="works_image" alt="photo galery" src="/images/works.jpeg">
-                            <p class="image_caption">подпись к картинке</p>
-                        </div>
-                        <div class="image_container">
-                            <img class="works_image" alt="photo galery" src="/images/works.jpeg">
-                            <p class="image_caption">подпись к картинке</p>
-                        </div>-->
+
                     </div>
                 </div>
             </div>

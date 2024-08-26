@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <title>mastaky</title>
     <style>
@@ -37,14 +37,15 @@ h2 {
 .footer {
     padding: 10px;
 }
-.header {
+/*.header {
     background-color: gainsboro;
-}
+}*/
 .navigation {
     background-color: #FFEFD5;
 }
 .navigation ul {
     list-style: none;
+    
 }
 .navigation li {
     display: inline-block;
@@ -66,22 +67,9 @@ h2 {
 .main {
     background-color: bisque;
 }
-/*.main .promo,
-.main .info,
-.main .about,
-.main .col,
-.main .form,
-.main .teachers,
-.main .section,
-.main .mk,
-.main .media,
-.main .works,
-.main .back,
-.main .contacts {
-    margin-bottom: 20px;
-}*/
+
 .main .container > div:first-child {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 .main .promo {
     position: relative;
@@ -311,6 +299,35 @@ h2 {
 .main .about_education img {
     width: 100%;
 }
+.about_education .title {
+    background-color: gold;
+    text-align: center;
+    margin-left: 0;
+    padding: 35px;
+    display: inline-block;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.about_education p {
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+}
+.course-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.course-details .price,
+.course-details .duration {
+    font-size: 24px;
+    color: #d9534f; /* Красный цвет для выделения */
+    font-weight: bold;
+    margin-left: 20px; /* Отступ слева для отделения от метки */
+}
+
+
 .main .mk {
     background-color: #CD853F;
     overflow: hidden;
@@ -326,6 +343,219 @@ h2 {
 .main .about_mk img {
     width: 100%;
 }
+.main .paintings h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Основные стили для контейнера */
+.main .paintings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: beige;
+    padding: 45px;
+}
+
+/* Стили для карточек товаров */
+.main .paintings_item {
+    width: 45%;
+    margin-bottom: 20px;
+    display: inline-block;
+    overflow: hidden;
+    padding: 10px;
+    vertical-align: top;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Стили для контейнера изображения */
+.image_paint_container {
+    width: 100%;
+    height: 350px; /* Фиксированная высота */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Стили для изображения */
+.image_paint_container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Стили для заголовков и текста */
+.main .paintings_item a,
+.main .paintings_item h1,
+.main .paintings_item p,
+.main .paintings_item form {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .main .paintings_item {
+        width: 100%;
+    }
+}
+
+
+.main .paintings_item a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.main .paintings_item a:hover {
+    color: #64a2a9;
+}
+.main .paintings_item input {
+    border: none;
+    background-color: rgba(221, 221, 221, 0.686);
+    width: 160px;
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.main .paintings_item input:hover {
+    background-color:#faef92;
+}
+
+/* Стили для блока с подробным описанием картины */
+.painting-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Стили для основного изображения */
+.painting-detail .main-image {
+    max-width: 50%;
+    height: auto;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+/* Стили для блока с дополнительными изображениями */
+.additional-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.additional-images img {
+    width: 23%;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.additional-images img:hover {
+    transform: scale(1.1);
+}
+
+/* Стили для заголовков и текста */
+.painting-detail h1,
+.painting-detail h2,
+.painting-detail h3,
+.painting-detail p {
+    margin: 10px 0;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .painting-detail {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .painting-detail .main-image {
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .additional-images img {
+        width: 48%;
+        margin-bottom: 10px;
+    }
+}
+.main .cart {
+    background-color: white;
+    padding: 45px;
+}
+
+.cart-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+}
+
+.cart-table th, .cart-table td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: center;
+}
+.cart-table td img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.cart-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/*.cart-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}*/
+
+.cart-table tr:hover {
+    background-color: #f1f1f1;
+}
+.cart-item-actions a {
+    color: #d9534f; /* Цвет иконки */
+    font-size: 20px; /* Размер иконки */
+    text-decoration: none;
+}
+
+.total-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d9534f; /* Красный цвет для выделения */
+}
+/*.checkout-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: gold; 
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+}
+.checkout-button:hover {
+    background-color: #4cae4c; */
+
 .main .media {
     background-color: white;
     padding: 45px;
@@ -344,11 +574,10 @@ h2 {
     margin-bottom: 20px;
 }
 .main .faq .panel {
-    font-family: Arial, Helvetica, sans-serif; /*??*/
-
+    font-family: Arial, Helvetica, sans-serif;
 }
 .main .faq .accordion {
-    background-color: #FFFFE0;
+    background-color: white;
     color: #444;
     cursor: pointer;
     padding: 18px;
@@ -365,7 +594,7 @@ h2 {
 
 }*/
 .main .faq .accordion:hover {
-    background-color: #ccc;
+    background-color: gainsboro;
 }
 .accordion:after {
     content: '\002B';

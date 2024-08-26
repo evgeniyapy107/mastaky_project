@@ -1,30 +1,38 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<nav class="navigation">
+            <div class="container">
+                <ul>
+                    <li class="home"><a href="{% url 'main_index' %}"><div class="home-image"><i class="fa fa-home"></i></div></a></li>
+                    <li class="tel"><a href="#">+375 29 8139716</a></li>
+                </ul>
+            </div>
+</nav>
 <main class="main">
     <div class="container">
         <div class="painting-detail">
-            <h1>{{ painting.title }}</h1>
-            <h2>Автор: {{ painting.artist }}</h2>
-            <img src="{{ painting.image.url }}" alt="photo painting">
-            <h3>Цена: {{ painting.price }}</h3>
-
-            <div class="about-painting">
-                <h2>{{ about_painting.title }}</h2>
-                <p>{{ about_painting.description }}</p>
-                <div class="additional-images">
-                    <img src="{{ about_painting.image1.url }}" alt="additional image 1">
-                    <img src="{{ about_painting.image2.url }}" alt="additional image 2">
-                    <img src="{{ about_painting.image3.url }}" alt="additional image 3">
-                    <img src="{{ about_painting.image4.url }}" alt="additional image 4">
+            <img class="main-image" src="{{ painting.image.url }}" alt="photo painting"> <!-- Перемещено влево -->
+            <div class="details">
+                <h1>{{ painting.title }}</h1>
+                <h2>Автор: {{ painting.artist }}</h2>
+                <h3>Цена: {{ painting.price }}</h3>
+                <div class="about-painting">
+                    <h2>{{ about_painting.title }}</h2>
+                    <p>{{ about_painting.description }}</p>
+                    <h3>Дополнительная цена: {{ about_painting.price }}</h3>
                 </div>
-                <h3>Дополнительная цена: {{ about_painting.price }}</h3>
+                <form action="{% url 'cart:cart_add' painting_id=painting.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Добавить в корзину">
+                </form>
             </div>
-
-            <form action="{% url 'cart:cart_add' painting_id=painting.id %}" method="post">
-                {% csrf_token %}
-                <input type="submit" value="Добавить в корзину">
-            </form>
+        </div>
+        <div class="additional-images">
+            <img src="{{ about_painting.image1.url }}" alt="additional image 1">
+            <img src="{{ about_painting.image2.url }}" alt="additional image 2">
+            <img src="{{ about_painting.image3.url }}" alt="additional image 3">
+            <img src="{{ about_painting.image4.url }}" alt="additional image 4">
         </div>
     </div>
 </main>
