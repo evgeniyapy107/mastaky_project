@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
     'painting.apps.PaintingConfig',
-    'cart.apps.CartConfig'
+    'cart.apps.CartConfig',
+    'accounts.apps.AccountsConfig'
 ]
 CART_SESSION_ID = 'cart'
 
@@ -119,6 +120,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+LOGIN_REDIRECT_URL = 'main_index'
+LOGOUT_REDIRECT_URL = '/'
+
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, '/static/')

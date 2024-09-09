@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<nav class="navigation">
+    <div class="container">
+        <ul>
+            <li class="home"><a href="{% url 'main_index' %}"><div class="home-image"><i class="fa fa-home"></i></div></a></li>
+            <li class="tel"><a href="#">+375 29 8139716</a></li>
+            <li><a href="{% url 'painting_index' %}">карціны</a></li>
+        </ul>
+    </div>
+</nav>
+<main class="main">
+    <div class="container">
+        <div class="signup">
+            <h2>рэгістрацыя</h2>
+            <form class="signup_form" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="signup_button" type="submit">зарэгістравацца</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

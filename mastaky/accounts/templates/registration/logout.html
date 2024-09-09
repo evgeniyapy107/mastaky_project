@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="logout-message">
+    <h2>Вы успешно вышли из системы!</h2>
+    <a href="{% url 'main_index' %}">Вернуться на главную страницу</a>
+</div>
+{% endblock %}

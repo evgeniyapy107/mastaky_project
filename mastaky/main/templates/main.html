@@ -13,7 +13,20 @@
                     <li><a href="#vopros">FAQ</a></li>
                     <li><a href="#kontakty">кантакты</a></li>
                     
-                    <li class="tel"><a href="#">+375 29 8139716</a></li>
+                    {% if user.is_authenticated %}
+                    <li>Привет, {{ user.first_name }}!</li>
+                    <li>
+                        <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit" style="background:none; border:none; padding:0;">
+                                <div class="logout-image"><i class="fa fa-sign-out-alt"></i></div>
+                            </button>
+                        </form>
+                    </li>
+                    {% else %}
+                    <li class="signup"><a href="{% url 'signup' %}"><div class="signup-image"><i class="fa fa-user-plus"></i></div></a></li>
+                    <li class="login"><a href="{% url 'login' %}"><div class="login-image"><i class="fa fa-sign-in-alt"></i></div></a></li>
+                    {% endif %}
                 </ul>
             </div>
 </nav>

@@ -25,4 +25,6 @@ def cart_detail(request):
 
 
 
+
+
 # Create your views here.

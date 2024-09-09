@@ -24,6 +24,8 @@ urlpatterns = [
     path('painting/', include('painting.urls')),
     path('cart/', include('cart.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('accounts.urls')),
+
 ]
 
 if settings.DEBUG:
