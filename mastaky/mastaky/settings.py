@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'painting.apps.PaintingConfig',
     'cart.apps.CartConfig',
-    'accounts.apps.AccountsConfig'
+    'signup.apps.SignupConfig'
 ]
 CART_SESSION_ID = 'cart'
 
