@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from painting import models
 from .cart import Cart
 from .forms import OrderForm
+from .models import Order, OrderItem
 
 
 @require_POST
@@ -27,24 +28,28 @@ def cart_detail(request):
 
 
 @login_required
-def order(request):
+def order_create(request):
+    cart = Cart(request)
     if request.method == 'POST':
         form = OrderForm(request.POST)
         if form.is_valid():
             order = form.save(commit=False)
             order.user = request.user
             order.save()
-            # Дополнительная логика, например, очистка корзины
+            for item in cart:
+                OrderItem.objects.create(
+                    order=order,
+                    painting=item['painting'],
+                    price=item['price'],
+                    quantity=item['quantity']
+                )
+            cart.clear()  # Очистка корзины после создания заказа
             return redirect('order_success')
     else:
         form = OrderForm()
-    return render(request, 'order.html', {'form': form})
+    return render(request, 'order.html', {'form': form, 'cart': cart})
 
 
 def order_success(request):
     return render(request, 'order_success.html')
 
-
-
-
-# Create your views here.
