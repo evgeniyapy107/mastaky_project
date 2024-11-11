@@ -13,11 +13,12 @@
 <main class="main">
     <div class="container">
         <div class="login_page">
-            <h3>уваход у акаўнт</h3>
+            <h3>уваход у акаўнт</h3><br>
             <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button class="signup_button" type="submit">увайсці</button>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="yellow_button" type="submit">увайсці</button>
+                <a href="{% url 'signup' %}">рэгістрацыя</a>
             </form>
 
         </div>

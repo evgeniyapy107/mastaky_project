@@ -1,12 +1,21 @@
-<!-- templates/cart/order_success.html -->
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Заказ оформлен</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
+<nav class="navigation">
+    <div class="container">
+        <ul>
+            <li class="home"><a href="{% url 'main_index' %}"><div class="home-image"><i class="fa fa-home"></i></div></a></li>
+            <li class="tel"><a href="#">+375 29 8139716</a></li>
+            <li><a href="{% url 'painting_index' %}">карціны</a></li>
+        </ul>
+    </div>
+</nav>
+<main class="main">
+    <div class="container">
+        <div class="order">
     <h2>Ваш заказ успешно оформлен!</h2>
     <a href="{% url 'main_index' %}">Вернуться на главную</a>
-</body>
-</html>
+        </div>
+    </div>
+</main>
+{% endblock %}

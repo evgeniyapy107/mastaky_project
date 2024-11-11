@@ -50,7 +50,6 @@ h2 {
 .navigation li {
     display: inline-block;
     margin-right: 16px;
-
     font-size: 20px;
 }
 .navigation a {
@@ -58,11 +57,10 @@ h2 {
     color: black;
     text-decoration: none;
     text-transform: uppercase;
-
     padding: 10px 20px;
 }
 .navigation a:hover {
-    background-color: gold;
+    background-color: #ffd700;
 }
 .main {
     background-color: bisque;
@@ -71,11 +69,34 @@ h2 {
 .main .container > div:first-child {
     margin-bottom: 10px;
 }
+.main .login_page {
+    background-color: white;
+    padding: 45px; 
+}
 .main .signup {
     background-color: white;
     padding: 45px;
 }
 .main .signup .signup_form {
+    font-size: 14px;
+    width: 40%;
+}
+.signup_form label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+.signup_form .field-wrapper {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.signup_form input[type="text"],
+.signup_form input[type="password"] {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 10px;
+    padding: 8px;
     font-size: 14px;
 }
 .main .signup h2 {
@@ -97,7 +118,7 @@ h2 {
 
 }
 .main .promo_button,
-.main .signup_button {
+.main .yellow_button {
     border: none;
     border-radius: 15px;
     font-family: 'Sunday Regular';
@@ -111,7 +132,7 @@ h2 {
     /*transform*/
 }
 .main .promo_button:hover,
-.main .signup_button:hover {
+.main .yellow_button:hover {
     background-color: rgb(255, 239, 151);
 
 }
@@ -161,6 +182,13 @@ h2 {
     width: 50%;
     margin: 0 auto;
     margin-bottom: 25px;
+}
+.main .column-4 .title:hover {
+    background-color: rgba(222, 184, 135, 0.538);
+}
+.custom-link {
+    text-decoration: none; /* Убирает подчеркивание */
+    color: inherit; /* Устанавливает цвет текста такой же, как у родительского элемента */
 }
 .main .row {
     margin-top: 20px;
@@ -258,7 +286,7 @@ h2 {
     /*border-radius: 50%;*/
 }
 .main .section {
-    background-color: #eeb720b7;
+    background-color: #ffd700;
     /*padding: 45px;*/
     padding-top: 25px;
     text-align: center;
@@ -277,16 +305,20 @@ h2 {
     vertical-align: top; /*подумать*/
     overflow: hidden;
     margin: 40px;
-    /*border: dotted brown 3px;
-    border-radius: 15px;*/
     padding: 8px;
-    background-color: rgba(255, 215, 0, 0.55);
+    /*background-color: rgba(255, 215, 0, 0.55);*/
+    background-color: whitesmoke;
+    border-radius: 15px;
+}
+.main .section_item:hover {
+    transform: scale(1.1);
 }
 .main .item_image {
-    width: 100%;
+    width: 100%;   
 }
 .main .item_image:hover {
     opacity: 0.7;
+    
 }
 .main .link {
     color: black;
@@ -352,8 +384,14 @@ h2 {
     text-align: center;
     margin-bottom: 20px;
 }
+.main .about_mk {
+    padding: 45px;
+}
 .main .about_mk img {
     width: 100%;
+}
+.main .about_mk h1 {
+    margin-bottom: 20px;
 }
 .main .paintings h1 {
     width: 100%;
@@ -399,6 +437,9 @@ h2 {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+}
+.image_paint_container img:hover {
+    transform: scale(1.08);
 }
 
 /* Стили для заголовков и текста */
@@ -503,9 +544,13 @@ h2 {
         margin-bottom: 10px;
     }
 }
-.main .cart {
+.main .cart,
+.main .order {
     background-color: white;
     padding: 45px;
+}
+.main .cart p {
+    font-size: 16px;
 }
 
 .cart-table {
@@ -532,10 +577,6 @@ h2 {
     font-weight: bold;
 }
 
-/*.cart-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}*/
-
 .cart-table tr:hover {
     background-color: #f1f1f1;
 }
@@ -550,24 +591,19 @@ h2 {
     font-weight: bold;
     color: #d9534f; /* Красный цвет для выделения */
 }
-/*.checkout-button {
-    display: block;
+
+.main .order .form-group {
     width: 100%;
     padding: 10px;
-    background-color: gold; 
-    color: white;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    text-decoration: none;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+        
 }
-.checkout-button:hover {
-    background-color: #4cae4c; */
-
+.main .order .form-check-input {
+    margin-right: 30px;
+}
 .main .media {
     background-color: white;
     padding: 45px;
@@ -601,10 +637,7 @@ h2 {
     font-size: 20px;
     transition: 0.4s;
 }
-/*.main .faq .accordion:nth-child(odd){
-    background-color: gold;
 
-}*/
 .main .faq .accordion:hover {
     background-color: gainsboro;
 }

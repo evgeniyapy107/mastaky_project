@@ -44,7 +44,7 @@ def order_create(request):
                     quantity=item['quantity']
                 )
             cart.clear()  # Очистка корзины после создания заказа
-            return redirect('order_success')
+            return redirect('cart:order_success')
     else:
         form = OrderForm()
     return render(request, 'order.html', {'form': form, 'cart': cart})

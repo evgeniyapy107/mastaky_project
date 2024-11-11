@@ -9,6 +9,17 @@ class OrderForm(forms.ModelForm):
             'first_name', 'last_name', 'address', 'phone', 'comment',
             'payment_method', 'delivery_method', 'delivery_date', 'delivery_time'
         ]
+        labels = {
+            'first_name': 'Имя',
+            'last_name': 'Фамилия',
+            'address': 'Адрес',
+            'phone': 'Телефон',
+            'comment': 'Комментарий',
+            'payment_method': 'Способ оплаты',
+            'delivery_method': 'Способ доставки',
+            'delivery_date': 'Дата доставки',
+            'delivery_time': 'Время доставки',
+        }
         widgets = {
             'delivery_date': forms.SelectDateWidget(),
             'delivery_time': forms.Select(choices=Order.DELIVERY_TIME_CHOICES),

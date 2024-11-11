@@ -9,12 +9,13 @@
                     <li><a href="#pra_nas">пра нас</a></li>
                     <li><a href="#kursy">курсы</a></li>
                     <li><a href="{% url 'painting_index' %}">карціны</a></li>
-                    <li><a href="#">магазін</a></li>
+                    <!--<li><a href="#">магазін</a></li>-->
                     <li><a href="#vopros">FAQ</a></li>
                     <li><a href="#kontakty">кантакты</a></li>
                     <li class="tel"><a href="#">+375 29 8139716</a></li>
+                    <li class="cart"><a href="{% url 'cart:cart_detail' %}"><div class="cart-image"><i class="fa fa-shopping-cart"></i></div></a></li>
                     
-                    {% if user.is_authenticated %}
+                    <!--{% if user.is_authenticated %}
                     <li>Привет, {{ user.first_name }}!</li>
                     <li>
                         <form method="post" action="{% url 'logout' %}">
@@ -27,7 +28,7 @@
                     {% else %}
                     <li class="signup"><a href="{% url 'signup' %}"><div class="signup-image"><i class="fa fa-user-plus"></i></div></a></li>
                     <li class="login"><a href="{% url 'login' %}"><div class="login-image"><i class="fa fa-sign-in-alt"></i></div></a></li>
-                    {% endif %}
+                    {% endif %}-->
                 </ul>
             </div>
 </nav>
@@ -57,11 +58,33 @@
                     <img src="{% static 'images/section_about.PNG' %}" alt="фоновая картинка">
                 </div>
             </div>
+                    <div class="container">
+                <div class="teachers">
+                    <div class="title-center">
+                        <h2>Тучынскiя Мастакi - это</h2>
+                    </div>
+                    <div class="teachers_item">
+                        <p>Ірына Міхайлаўна Дубянецкая (нар. 23 мая 1964, Мінск) — доктар багаслоўя. Дачка выдаўца і пісьменніка Міхася Дубянецкага</p>
+                    </div>
+                    <div class="teachers_item">
+                        <img class="teachers_image" alt="фото учителя" src="{% static 'images/cat.jpeg' %}">
+                    </div>
+
+                    <div class="teachers_item">
+                        <img class="teachers_image" alt="фото учителя" src="{% static 'images/maxim.png' %}">
+                    </div>
+                    <div class="teachers_item">
+                        <p>Максим Храповицкий- художник, преподаватель Санкт-петербургской школы телевидения. Окончил Белорусский Государственный Университет, учился в художественной школе</p>
+                    </div>
+                </div>
+            </div>
             <div class="container">
                 <div class="column-4">
-                    <div class="title">
+                    <a href="{% url 'join_up_form' %}" class="custom-link">
+                        <div class="title">
                         <h2>Запісвайцеся на пробны занятак</h2>
-                    </div>
+                        </div>
+                    </a>
                     <div class="row">
                         <div class="col">
                             <img class="col-image" src="{% static 'images/col-image-1.png' %}" alt="изображение колонки 1">
@@ -86,7 +109,8 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
+
+            <!--<div class="container">
                 <div class="form">
                     <h2>Запішыцесць на выпрабавальны занятак</h2>
                     <form method="POST">
@@ -107,27 +131,8 @@
                     <br>
                     <p>* Націскаючы на ​​кнопку, вы даяце згоду на апрацоўку сваіх персанальных дадзеных</p>
                 </div>
-            </div>
-            <div class="container">
-                <div class="teachers">
-                    <div class="title-center">
-                        <h2>Тучынскiя Мастакi - это</h2>
-                    </div>
-                    <div class="teachers_item">
-                        <p>Ірына Міхайлаўна Дубянецкая (нар. 23 мая 1964, Мінск) — доктар багаслоўя. Дачка выдаўца і пісьменніка Міхася Дубянецкага</p>
-                    </div>
-                    <div class="teachers_item">
-                        <img class="teachers_image" alt="фото учителя" src="{% static 'images/cat.jpeg' %}">
-                    </div>
+            </div>-->
 
-                    <div class="teachers_item">
-                        <img class="teachers_image" alt="фото учителя" src="{% static 'images/maxim.png' %}">
-                    </div>
-                    <div class="teachers_item">
-                        <p>Максим Храповицкий- художник, преподаватель Санкт-петербургской школы телевидения. Окончил Белорусский Государственный Университет, учился в художественной школе</p>
-                    </div>
-                </div>
-            </div>
             <div class="container">
                 <div class="section" id="kursy">
                     <div class="rhombus">
@@ -156,7 +161,8 @@
                     {% endfor %}
 
                     <div class="mk_item">
-                        <h2>Частка майстар-класаў даступная не толькі ў жывую, але і анлайн. Напішыце нам, каб даведацца падрабязнасці</h2>
+                        <p>Частка майстар-класаў даступная не толькі ў жывую, але і анлайн!</p>
+                        <p>Напішыце нам, каб даведацца падрабязнасці</p>
                     </div>
                 </div>
             </div>
@@ -171,7 +177,7 @@
                 <div class="mk" id="kartiny">
                     <div class="mk_title">
                         <h2>таксама ў наяўнасці вялікая колькасць гатовых работ на беларускую тэматыку</h2>
-                        <a href="{% url 'painting_index' %}">список картин</a>
+                        <a href="{% url 'painting_index' %}">адкрыць галерэю</a>
                     </div>
 
                     <div class="mk_item">

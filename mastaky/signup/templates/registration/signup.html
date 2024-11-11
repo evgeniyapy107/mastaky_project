@@ -16,8 +16,10 @@
             <h2>рэгістрацыя</h2>
             <form class="signup_form" method="post">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button class="signup_button" type="submit">зарэгістравацца</button>
+                <div class="field-wrapper">
+                    {{ form.as_p }}
+                </div>
+                <button class="yellow_button" type="submit">зарэгістравацца</button>
             </form>
         </div>
     </div>

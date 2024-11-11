@@ -1,16 +1,56 @@
-<!-- templates/cart/checkout.html -->
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Оформление заказа</title>
-</head>
-<body>
-    <h2>Оформление заказа</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Подтвердить заказ</button>
-    </form>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<nav class="navigation">
+    <div class="container">
+        <ul>
+            <li class="home"><a href="{% url 'main_index' %}"><div class="home-image"><i class="fa fa-home"></i></div></a></li>
+            <li class="tel"><a href="#">+375 29 8139716</a></li>
+            <li><a href="{% url 'painting_index' %}">карціны</a></li>
+            <li class="cart"><a href="{% url 'cart:cart_detail' %}"><div class="cart-image"><i class="fa fa-shopping-cart"></i></div></a></li>
+        </ul>
+    </div>
+</nav>
+<main class="main">
+    <div class="container">
+        <div class="order">
+
+            <h2>Оформление заказа</h2><br>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.first_name.label_tag }}
+                    {{ form.first_name }}<br>
+                    {{ form.last_name.label_tag }}
+                    {{ form.last_name }}<br>
+                    {{ form.address.label_tag }}
+                    {{ form.address }}<br>
+                    {{ form.phone.label_tag }}
+                    {{ form.phone }}<br>
+                    {{ form.comment.label_tag }}
+                    {{ form.comment }}<br>
+                </div>
+                <div class="form-group">
+                    {{ form.payment_method.label_tag }}
+                    {{ form.payment_method }}
+                </div>
+                <div class="form-group">
+                    {{ form.delivery_method.label_tag }}
+                    {{ form.delivery_method }}
+                </div>
+                <div class="form-group">
+                    {{ form.delivery_date.label_tag }}
+                    {{ form.delivery_date }}
+                </div>
+                <div class="form-group">
+                    {{ form.delivery_time.label_tag }}
+                    {{ form.delivery_time }}
+                </div>
+                <button type="submit" class="yellow_button">Подтвердить заказ</button>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+
